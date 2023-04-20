@@ -103,7 +103,7 @@ class HomeAssistantData(BaseConfig):
 
 
 class GoogleSheets(BaseConfig):
-    def __init__(self, config_file="grid.yaml"):
+    def __init__(self, config_file="config.yaml"):
         config = BaseConfig.load_config("google_sheet", config_file=config_file)
         self.spreadsheet_id = config.get("spreadsheet_id")
         self.range_name = config.get("range_name")

@@ -31,7 +31,7 @@ def sync_grid():
         config_file = config_file[0]
     tz_name = 'Asia/Shanghai'
     hass = HomeAssistantData(config_file=config_file)
-    google = GoogleSheets()
+    google = GoogleSheets(config_file=config_file)
     cells = google.get_cells()
     local_start_date = datetime.fromisoformat(cells[-1][0])
     local_start_date = Util.set_tz(local_start_date + timedelta(seconds=1), tz_name)
