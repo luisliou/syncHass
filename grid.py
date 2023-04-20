@@ -1,3 +1,4 @@
+import sys
 from datetime import datetime, timedelta
 
 from basedata import HomeAssistantData, GoogleSheets
@@ -23,8 +24,11 @@ def get_daily_usage(date_value_dict, local_start_date, local_end_date, tz_name):
 
 
 def sync_grid():
+    config_file = sys.argv[1:]
+    if len(config_file) == 0:
+        config_file = "grid.yaml"
     tz_name = 'Asia/Shanghai'
-    hass = HomeAssistantData(config_file="grid.yaml")
+    hass = HomeAssistantData(config_file=config_file)
     google = GoogleSheets()
     cells = google.get_cells()
     local_start_date = datetime.fromisoformat(cells[-1][0])
