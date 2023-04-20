@@ -1,0 +1,12 @@
+home_assistant:
+  api: "HOME_ASSISTANT_API_KEY"
+  entity: "sensor.grid_energy"
+  base_url: "https://YOUR_HOME_ASSISTANT"
+
+google_sheet:
+  spreadsheet_id: ""
+  range_name: "SHEET_NAME!A:B"
+  scopes: ["https://www.googleapis.com/auth/spreadsheets"]
+  credentials_path: "./script/"
+  token_file: "token.json"
+  credentials_file: "token.json"
