@@ -27,6 +27,8 @@ def sync_grid():
     config_file = sys.argv[1:]
     if len(config_file) == 0:
         config_file = "grid.yaml"
+    else:
+        config_file = config_file[0]
     tz_name = 'Asia/Shanghai'
     hass = HomeAssistantData(config_file=config_file)
     google = GoogleSheets()

@@ -8,6 +8,8 @@ def sync_weight():
     config_file = sys.argv[1:]
     if len(config_file) == 0:
         config_file = "weight.yaml"
+    else:
+        config_file = config_file[0]
     google = GoogleSheets(config_file)
     cells = google.get_cells()
     local_time = Util.str_to_datetime(cells[-1][0])
